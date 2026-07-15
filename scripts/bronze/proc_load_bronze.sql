@@ -11,9 +11,16 @@ Script Purpose:
 	tables.
 
 Parameters:
-    None.
+  None.
   This stored procedure does not accept any parameters or return any 
   values.
+
+Note:
+  Before running this procedure, update the file paths in each
+  BULK INSERT statement to point to the location of your
+  downloaded CSV files.
+
+  All CSV files should be placed in the same directory.
 
 Usage Example:
   EXEC bronze.load_bronze;
@@ -35,7 +42,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_orders';
     BULK INSERT bronze.olist_orders
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_orders_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_orders_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -54,7 +61,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_customers';
     BULK INSERT bronze.olist_customers
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_customers_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_customers_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -73,7 +80,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_geolocation';
     BULK INSERT bronze.olist_geolocation
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_geolocation_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_geolocation_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -93,7 +100,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_sellers';
     BULK INSERT bronze.olist_sellers
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_sellers_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_sellers_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -112,7 +119,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_order_items';
     BULK INSERT bronze.olist_order_items
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_order_items_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_order_items_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -131,7 +138,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_products';
     BULK INSERT bronze.olist_products
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_products_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_products_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -150,7 +157,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_payments';
     BULK INSERT bronze.olist_order_payments
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_order_payments_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_order_payments_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -169,7 +176,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.olist_order_reviews';
     BULK INSERT bronze.olist_order_reviews
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\olist_order_reviews_dataset.csv'
+    FROM '<PATH_TO_DATA>\olist_order_reviews_dataset.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
@@ -187,7 +194,7 @@ BEGIN
 
     PRINT '>> Inserting Data Into: bronze.product_category_translation';
     BULK INSERT bronze.product_category_translation
-    FROM 'C:\Users\Anton\Downloads\DATA_WAREHOUSE_PROJECT\data\product_category_name_translation.csv'
+    FROM '<PATH_TO_DATA>\product_category_name_translation.csv'
     WITH (
         FORMAT = 'CSV',
         FIRSTROW = 2,
