@@ -7,7 +7,7 @@ Script Purpose:
 	receive the CSVs, dropping tables with matching names 
 	if they already exist.
 	Run this script to re-define the DDL structure of 'bronze' 
-	Tables.
+	tables.
 Note:
 	All data in the bronze layer is stored as either VARCHAR
 	or NVARCHAR, and will be changed in the 'silver' layer.
