@@ -1,17 +1,15 @@
 /*
-==============================================================
+==========================================================================
 DDL Script: Creating the Bronze Tables
-==============================================================
+==========================================================================
 Script Purpose:
-	This script creates tables in the 'bronze' schema to 
-	receive the CSVs, dropping tables with matching names 
-	if they already exist.
-	Run this script to re-define the DDL structure of 'bronze' 
-	tables.
+	This script creates tables in the 'bronze' schema to receive the CSVs, 
+	dropping tables with matching names if they already exist.
+	Run this script to re-define the DDL structure of 'bronze' tables.
 Note:
-	All data in the bronze layer is stored as either VARCHAR
-	or NVARCHAR, and will be changed in the 'silver' layer.
-==============================================================
+	All data in the bronze layer is stored as either VARCHAR or NVARCHAR, 
+	and will be changed in the 'silver' layer.
+==========================================================================
 */
 
 IF OBJECT_ID ('bronze.olist_orders', 'U') IS NOT NULL
