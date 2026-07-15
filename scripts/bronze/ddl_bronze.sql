@@ -1,11 +1,16 @@
 /*
 ==============================================================
-DDL Script: Create Bronze Tables
+DDL Script: Creating the Bronze Tables
 ==============================================================
 Script Purpose:
-	This script creates tables in the 'bronze' schema, dropping existing tables 
+	This script creates tables in the 'bronze' schema to 
+	receive the CSVs, dropping tables with matching names 
 	if they already exist.
-	Run this script to re-define the DDL structure of 'bronze' Tables.
+	Run this script to re-define the DDL structure of 'bronze' 
+	Tables.
+Note:
+	All data in the bronze layer is stored as either VARCHAR
+	or NVARCHAR, and will be changed in the 'silver' layer.
 ==============================================================
 */
 
