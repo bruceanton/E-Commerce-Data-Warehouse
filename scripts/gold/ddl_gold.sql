@@ -3,8 +3,8 @@
 DDL Script: Creating the Gold Views
 ==============================================================================================
 Script Purpose:
-    This script creates views for the Gold layer in the data warehouse.
-    The Gold layer represents the final dimension and fact tables formed by tables from the
+    This script creates views for the Gold layer of the Data Warehouse.
+    The Gold layer contains the final dimension and fact tables formed by tables from the
     Silver layer.
 
     Each view performs transformations and combines data from the Silver layer through the
