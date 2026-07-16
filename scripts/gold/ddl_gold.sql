@@ -144,9 +144,9 @@ SELECT
     END AS freight_to_price_ratio,
     1 AS item_count
 FROM silver.olist_order_items AS oi
-JOIN silver.olist_orders AS o
+INNER JOIN silver.olist_orders AS o
     ON oi.order_id = o.order_id
-JOIN silver.olist_customers AS c
+INNER JOIN silver.olist_customers AS c
     ON o.customer_id = c.customer_id;
 
 -- ===========================================================================================
@@ -184,15 +184,13 @@ SELECT
         o.order_delivered_customer_date
     ) AS days_late,
     CASE
-        WHEN o.order_delivered_customer_date >
-             o.order_estimated_delivery_date
-        THEN 1
+        WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 1
         ELSE 0
     END AS late_delivery_flag,
     o.invalid_date_sequence_flag
 FROM silver.olist_orders AS o
-INNER JOIN gold.dim_customers AS c
-    ON o.customer_id = c.latest_customer_id;
+INNER JOIN silver.olist_customers AS c
+    ON o.customer_id = c.customer_id;
 
 -- ===========================================================================================
 -- Create Fact Table: gold.fact_payments
