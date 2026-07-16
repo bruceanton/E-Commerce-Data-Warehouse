@@ -7,7 +7,8 @@ Script Purpose:
     The Gold layer represents the final dimension and fact tables formed by tables from the
     Silver layer.
 
-    Each view performs transformations and combines data from the Silver layer.
+    Each view performs transformations and combines data from the Silver layer through the
+	use of CTEs, JOINS, and Window Functions.
 
 Usage:
     - These views can be queried directly for analytics and reporting.
