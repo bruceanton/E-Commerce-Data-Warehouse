@@ -6,7 +6,7 @@ Script Purpose:
     This script performs quality checks to validate the integrity, consistency,
     and accuracy of the Gold layer.
     Because these tables were already thoroughly vetted in the silver layer,
-    these checks primarily focus on the uniquness of keys.
+    these checks primarily focus on the uniqueness of keys.
 
 Usage Notes:
     - Run these checks after creating the Gold views.
