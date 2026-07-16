@@ -4,13 +4,13 @@ DDL Script: Creating the Silver Tables
 ==========================================================================
 Script Purpose:
 	This script creates tables in the 'silver' schema to receive the cleaned
-  versions of the bronze tables, dropping tables with matching names if 
-  they already exist.
+	versions of the bronze tables, dropping tables with matching names if 
+	they already exist.
 	Run this script to re-define the DDL structure of 'silver' tables.
 Note:
 	There are some changes in datatypes in this layer of the Data Warehouse,
-  as well as some lightly engineered features which were not present
-  in the bronze layer.
+	as well as some lightly engineered features which were not present
+	in the bronze layer.
 ==========================================================================
 */
 
