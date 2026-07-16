@@ -1,6 +1,6 @@
 /*
 ==============================================================================================
-DDL Script: Create Gold Views
+DDL Script: Creating the Gold Views
 ==============================================================================================
 Script Purpose:
     This script creates views for the Gold layer in the data warehouse.
