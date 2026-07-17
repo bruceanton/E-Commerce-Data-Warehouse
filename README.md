@@ -17,18 +17,21 @@ https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data
 
 ## Bronze Layer
 ![bronze](media/DATA_FLOW_bronze.png)
+
 When building the bronze layer of the Data Warehouse, I first opened each CSV file using Notebook and verified its column names. After loading in each file, I would check the number of rows returned for each table using COUNT(*), and checked this against the number of rows in the original CSV files.
 
 Despite noticing varying datatypes, I stored all data either as VARCHAR or NVARCHAR when loading the CSV files into the bronze tables.
 
 ## Silver Layer
 ![bronze](media/DATA_FLOW_silver.png)
+
 Having successfully imported the raw CSV files into the bronze layer, I first inspected them before writing the DDL script for the silver layer. I checked each table for duplicate primary keys, null values, and spaces. What I found to be the most interesting part of this process was while exploring the bronze.olist_orders table. In this table, there were four columns containing dates / times, and I identified the proper order in which the times should progress.
 
 However, I noticed that a small percentage of the data did not follow this correct progression - in these cases, rather than try to 'swap' data on my own, I simply created a new column titled 'invalid_date_sequence_flag' which would have a value of 1 when the dates in its row did not follow the correct progression, and a value of 0 otherwise. This way, I did not perform some erroneous 'fix' on the column, but I am still able to notify users that something seems incorrect with these dates and allow for users to filter them out if desired.
 
 ## Gold Layer
 ![bronze](media/DATA_FLOW.png)
+
 During this final stage of building the Data Warehouse I utilized CTEs, Window Functions, and joins to create six views in the gold layer - three dimension tables, and three fact tables. These include:
 
 **(1) gold.dim_customers:**
