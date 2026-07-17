@@ -29,20 +29,20 @@ However, I noticed that a small percentage of the data did not follow this corre
 
 During this final stage of building the Data Warehouse I utilized CTEs, Window Functions, and joins to create six views in the gold layer - three dimension tables, and three fact tables. These include:
 
-(1) gold.dim_customers:
+**(1) gold.dim_customers:**
 - Built by selecting columns after joining the silver.olist_geolocation, silver.olist_customers, and silver.olist_orders tables
 
-(2) gold.dim_products:
+**(2) gold.dim_products:**
 - Built by selecting columns after joining the silver.olist_products and silver.product_category_translation tables
 
-(3) gold.dim_sellers:
+**(3) gold.dim_sellers:**
 - Built by selecting columns after joining the silver.olist_geolocation and silver.olist_sellers tables
 
-(4) gold.fact_order_items
+**(4) gold.fact_order_items:**
 - Built by selecting columns after joining the silver.olist_order_reviews, silver.olist_order_items, silver.olist_orders, and silver_olist_customers tables
 
-(5) gold.fact_orders
+**(5) gold.fact_orders:**
 - Built by selecting columns after joining the silver.olist_orders and silver.olist_customers tables
 
-(6) gold.fact_payments
+**(6) gold.fact_payments:**
 - Built by selecting columns after joining the silver.olist_order_payments, silver.olist_orders, and silver.olist_customers tables
