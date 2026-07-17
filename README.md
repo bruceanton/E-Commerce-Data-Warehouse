@@ -1,5 +1,7 @@
 # E-Commerce-Data-Warehouse
 
+![architecture](media/Warehouse_Architecture.png)
+
 ## Technologies:
 - SQL Server
 
