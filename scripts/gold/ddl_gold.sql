@@ -122,6 +122,13 @@ IF OBJECT_ID ('gold.fact_order_items', 'V') IS NOT NULL
 GO
 
 CREATE VIEW gold.fact_order_items AS
+WITH high_score AS (
+	SELECT
+		order_id,
+		MAX(review_score) AS max_review_score
+	FROM silver.olist_order_reviews
+	GROUP BY order_id
+)
 SELECT
     CONCAT(
         oi.order_id,
@@ -142,12 +149,15 @@ SELECT
         WHEN oi.price = 0 THEN NULL
         ELSE oi.freight_value / oi.price
     END AS freight_to_price_ratio,
+	h.max_review_score,
     1 AS item_count
 FROM silver.olist_order_items AS oi
 INNER JOIN silver.olist_orders AS o
     ON oi.order_id = o.order_id
 INNER JOIN silver.olist_customers AS c
-    ON o.customer_id = c.customer_id;
+    ON o.customer_id = c.customer_id
+LEFT JOIN high_score AS h
+	ON oi.order_id = h.order_id;
 
 -- ===========================================================================================
 -- Create Fact Table: gold.fact_orders
